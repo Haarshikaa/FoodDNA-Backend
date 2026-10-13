@@ -223,12 +223,11 @@ app.post(
       }
 
       const model = genAI.getGenerativeModel({
-        model: "gemini-3.7-flash",
+      model: "gemini-2.5-flash", 
       });
         const result = await model.generateContent([
       ]);
 
-      const result = await model.generateContent([
         `Analyze this food photo for a food journal.
 Return ONLY valid JSON, without markdown, in this format:
 {
