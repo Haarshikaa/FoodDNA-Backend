@@ -225,6 +225,8 @@ app.post(
       const model = genAI.getGenerativeModel({
         model: "gemini-3.7-flash",
       });
+        const result = await model.generateContent([
+      ]);
 
       const result = await model.generateContent([
         `Analyze this food photo for a food journal.
@@ -582,6 +584,9 @@ app.post("/api/insights", async (req, res) => {
       insights.push(
         `Nutrition estimates are unavailable for ${unknownCount} record(s) because the local nutrition list supports selected foods only.`
       );
+    }
+    } catch (error) {
+      console.error("Local insights error:", error.message);
     }
 
     insights.push(
